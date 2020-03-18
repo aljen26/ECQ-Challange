@@ -37,8 +37,18 @@ function updateDice(n,dot){
 }
 
 function placeDots(dot,...args){
+	 
+	let color;
+	let curNum = args.length;
+	if(curNum == 1) color = "#0D7FA0";
+	else if(curNum == 2) color = "#0A872E";
+	else if(curNum == 3) color = "#BF4545";
+	else if(curNum == 4) color = "#6F6B6B";
+	else if(curNum == 5) color = "#196B91";
+	else if(curNum == 6) color = "#E1B93A";
+	
 	args.map((i)=>{
-		dot[i].style.backgroundColor = "black";
+		dot[i].style.backgroundColor = color;
 	});
 }
 

@@ -25,20 +25,20 @@ body, html {
 }
 
 .dots {
-	width: 60%;
-	height: 60%;
+	width: 65%;
+	height: 65%;
 	border-radius: 50%;
-	background-color: black;
 	margin: auto;
 }
 
 .roll-btn {
 	display: block;
 	border: 1px solid black;
-	padding: 15px;
+	padding: 15px 25px;
 	background-color: none;
 	margin: 20px auto;
 	background-color: white;
+	border-radius: 5px;
 }
 
 .number {
