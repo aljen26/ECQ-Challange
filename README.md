@@ -1,5 +1,5 @@
 
-# ESQ CHALLANGE
+# ECQ CHALLANGE
 
 Because of Enhanced Community Quarantine
 implemented due to the CONVID-19. I created this challange to improve my HTML, CSS & Javascript skills.
