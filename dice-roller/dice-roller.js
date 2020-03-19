@@ -1,21 +1,16 @@
 
-let dices = document.querySelectorAll(".dice");
-
-/*-----Initializing Nodelist for dices----*/
-Initialize();
-
-let currentNum = 6;
-let rolled = document.querySelectorAll(".rolled");
-let dots = [];
-
-for(let i=0;i<dices.length;i++){
-	dots[i] = dices[i].querySelectorAll(".dots");
-}
-
-/*-----Initializing dices to six-----*/
-for(let dot of dots) updateDice(currentNum,dot);
+let dices;
+let currentNum;
+let rolled;
+let dot;
+let isRunning = false;
 
 function roll(){
+	if(!isRunning){
+		InitDices();
+		isRunning = true;
+	}
+	
 	for(let i=0;i<dots.length;i++){
 		currentNum = Math.floor(Math.random()*6)+1;
 		updateDice(currentNum,dots[i]);
@@ -52,7 +47,9 @@ function placeDots(dot,...args){
 	});
 }
 
-function Initialize(){
+function InitDices(){
+	dices = dices = document.querySelectorAll(".dice");
+	
  for(let dice of dices){
  	 let div;
  	 let span;
@@ -69,4 +66,14 @@ function Initialize(){
  		div.appendChild(span);
  		dice.appendChild(div);
  	}
+ 	
+ 	currentNum = 6;
+ rolled = document.querySelectorAll(".rolled");
+ dots = [];
+
+	for(let i=0;i<dices.length;i++){
+	dots[i] = dices[i].querySelectorAll(".dots");
+	}
+
+	for(let dot of dots) updateDice(currentNum,dot);
 }
