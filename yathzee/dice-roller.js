@@ -7,6 +7,7 @@ let isRunning = false;
 let play;
 let rollCounter = 0;
 let outcome = 0;
+
 function roll(){
 	if(!isRunning){
 		InitDices();
@@ -36,13 +37,15 @@ function roll(){
 //Here contains the outcome of the dice
 //and storing it to the game,
 //Also must include reset function
-let total = document.querySelector('.total');
-total.textContent = outcome;
-outcome=0;
+	let total = document.querySelector('.total');
+	total.textContent = outcome;
+	outcome=0;
+	
   dices.forEach((dice)=>{
   	if(dice.classList.contains("keep"))
   	 dice.classList.remove("keep")
   });
+  
   for(let dot of dots)
   	updateDice(0,dot);
  }

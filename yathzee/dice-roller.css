@@ -60,6 +60,9 @@ body, html {
 	border: 3px solid black;
 	margin: 20px auto;
 	border-radius: 17%;
+	font-size: 70px;
+	line-height: 150px;
+	text-align: center;
 }
 
 .keep {
