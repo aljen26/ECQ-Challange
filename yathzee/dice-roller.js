@@ -1,12 +1,12 @@
 let diceContainer;
 let dices;
-let currentNum;
-let rolled;
 let dot;
+let rolled;
+let rollBtnText;
+let currentNum = 6;
 let isRunning = false;
-let play;
 let rollCounter = 0;
-let outcome = 0;
+let outcome = [];
 
 function roll(){
 	if(!isRunning){
@@ -16,6 +16,13 @@ function roll(){
 	}
 	
 	else if(rollCounter<3) {
+		if(rollCounter==0){
+		 dices.forEach((dice)=>{
+  	 if(dice.classList.contains("keep"))
+  	  dice.classList.remove("keep")
+   });
+	 }
+	
 		for(let i=0;i<dices.length;i++){
 			currentNum = Math.floor(Math.random()*6)+1;
 		
@@ -25,11 +32,23 @@ function roll(){
 			
 			//Displaying dice outcome as integer
 			rolled[i].innerHTML = currentNum;
-			if(rollCounter==2)
-			outcome+=currentNum;
+			
 		}
 		rollCounter++;
-		play.innerHTML = "ROLL("+rollCounter+")";
+		rollBtnText.innerHTML = "ROLL("+rollCounter+")";
+		rollBtnText.style.color = "black";
+		
+		if(rollCounter==3){
+			let total = document.querySelector('.total');
+			let sum = 0;
+			for(let i=0;i<rolled.length;i++) sum += Number(rolled[i].innerHTML);	
+			total.textContent = sum;
+	
+		dices.forEach((dice)=>{
+ 		 	if(dice.classList.contains("keep"))
+  	 dice.classList.remove("keep");
+    });
+		}
  }
  
  else {
@@ -37,17 +56,8 @@ function roll(){
 //Here contains the outcome of the dice
 //and storing it to the game,
 //Also must include reset function
-	let total = document.querySelector('.total');
-	total.textContent = outcome;
-	outcome=0;
-	
-  dices.forEach((dice)=>{
-  	if(dice.classList.contains("keep"))
-  	 dice.classList.remove("keep")
-  });
-  
-  for(let dot of dots)
-  	updateDice(0,dot);
+	rollBtnText.innerHTML = "ROLL AGAIN";
+ rollBtnText.style.color = "yellow";
  }
 }
 
@@ -121,8 +131,7 @@ function InitDices(){
  	}
  	
 //Initializing all other variables
- 	play = document.querySelector('.roll-btn');
- 	currentNum = 6;
+ 	rollBtnText = document.querySelector('.roll-btn');
  rolled = document.querySelectorAll(".rolled");
  dots = [];
 
