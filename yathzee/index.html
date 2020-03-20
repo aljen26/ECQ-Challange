@@ -2,16 +2,18 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width,inital-scale=1">
+		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="dice-roller.css">
+		<link rel="stylesheet" href="scoreboard.css">
 		<script src="dice-roller.js"></script>
+		<script src="scoreboard.js"></script>
 	</head>
 	<body>
-		
-		<div class="total"></div>
+		<a class="score-btn" onclick="showScoreBoard()"></a>
 		<div class="dice-container"></div>
 		<button class="roll-btn" onclick="roll()">Play Yahtzee!</button>
-		
-		<div class="dice"></div>
-		
+		<div class="scoreboard hidden">
+			<div class="table-container"></div>
+		</div>
 	</body>
 </html>

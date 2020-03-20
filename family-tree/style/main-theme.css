@@ -1,0 +1,129 @@
+:root {
+	--main-bg-color: #29293d;
+	--main-theme: #739900;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	height: 100vh;
+}
+
+body {
+	background-color: var(--main-bg-color);
+}
+
+
+.nav-bar {
+	height: 3rem;
+	position: relative;
+}
+
+i.fa-bars {
+	position: absolute;
+	right: 2rem;	
+	color: var(--main-theme);
+	line-height: 3rem;
+	height: 3rem;
+	font-size: 1.5rem;
+}
+
+.content {
+	height: 80%;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+}
+
+div.greetings {
+	padding: 2rem;
+	font-family: Arial;
+	font-size: 2rem;
+	color: white;
+}
+
+.footer {	
+	background-color: var(--main-theme);
+	position: absolute;
+	top: 80%;
+	bottom: 0;
+	display: block;
+	padding-top: 1.5rem;	
+	transition: top linear .3s;
+	
+}
+
+i.fa-home {
+	position: absolute;
+	left: 2rem;	
+	color: var(--main-theme);
+	line-height: 3rem;
+	font-size: 1.5rem;
+}
+
+.info {
+	color: white;
+	padding: 0px 2rem 2.5rem;
+	font-size: .80rem;
+	padding-bottom: 3rem;
+}
+
+i.fa-chevron-up {
+	position: absolute;
+	display: inline-block;
+	color: white;
+	line-height: 3rem;
+	text-align: center;
+	width: 3rem;
+	height: 3rem;
+	border: .5px solid white;
+	border-radius: 50%;
+	font-size: 1.2rem;
+	top: -1.3rem;
+	right: 45%;
+	background-color: var(--main-theme);
+}
+
+i.fa-chevron-down {
+	position: absolute;
+	display: none;
+	color: white;
+	line-height: 3rem;
+	text-align: center;
+	width: 3rem;
+	height: 3rem;
+	border: .5px solid white;
+	border-radius: 50%;
+	font-size: 1.2rem;
+	top: -1.3rem;
+	right: 45%;
+	background-color: var(--main-theme);
+	z-index: 2;
+}
+
+.members {
+	display: none;
+	margin: 1rem;
+	background-color: white;
+	border-radius: 15px;
+	height: 500px;
+}
+
+img {
+	width: 70%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.sub-pic {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
