@@ -103,31 +103,22 @@ function InitDices(){
 //Initializing nodes and assinging to dice-container
 	diceContainer = document.querySelector(".dice-container");
 	
+	let str = "";
 	for(let i=0;i<5;i++){
- 			div = document.createElement('div');
- 			div.classList.add('dice');
- 			div.setAttribute("onclick","keep("+i+")");
- 			diceContainer.appendChild(div);
- 		}
+ 		 str += '<div class="dice" onclick="keep('+i+')"></div>';
+ 	}
+ 	
+ 	diceContainer.innerHTML = str;
  		
 	dices = document.querySelectorAll(".dice");
 	
+	str = "";
+	for(let i=0;i<9;i++){
+ 			str += '<div class="dots"></div>';
+ 	}
+	str += '<div class="number"><span class="rolled"></span></div>'
  for(let dice of dices){
- 	 let div;
- 	 let span;
- 		for(let i=0;i<9;i++){
- 			div = document.createElement('div');
- 			div.classList.add('dots');
- 			dice.appendChild(div);
- 		}
- 		
- 		div = document.createElement('div');
- 		div.classList.add('number');
- 		span = document.createElement('span');
- 		span.classList.add('rolled');
- 		
- 		div.appendChild(span);
- 		dice.appendChild(div);
+ 		dice.innerHTML = str;
  	}
  	
 //Initializing all other variables
