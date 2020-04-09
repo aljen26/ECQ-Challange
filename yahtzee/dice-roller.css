@@ -1,11 +1,11 @@
 
 .dice-container {
 	display: flex;
-	flex-flow: row no-wrap;
+	flex-flow: row wrap;
 	justify-content: space-evenly;
 	margin: 100px auto;
-	height: 95px;
 	background-color: #f4f4f4;
+	font-size: 16px;
 }
 
 .dice {
@@ -13,11 +13,11 @@
 	position: relative;
 	grid-template-rows: 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	width: 60px;
-	height: 60px;
+	width: 4em;
+	height: 4em;
 	border: solid 3px black;
 	border-radius: 17%;
-	margin: 10px 5px;
+	margin: .8em .5em;
 	justify-content: center;
 	align-items: center;
 	background-color: white;

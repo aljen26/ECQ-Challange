@@ -108,6 +108,8 @@ function keep(i){
 
 
 function InitDices(){	
+  
+			
 //Initializing nodes and assinging to dice-container
 	diceContainer = document.querySelector(".dice-container");
 	
